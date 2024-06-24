@@ -62,7 +62,7 @@ const Header = () => {
         <div className='flex p-2  justify-between'>
           {showGptSearchView && (
             <select
-              className=' text-white py-2 px-4 m-4 rounded-md'
+              className=' text-black py-2  px-4 m-4 rounded-md pr-3'
               onChange={(e) => dispatch(changeLanguage(e.target.value))}>
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option key={lang.idenftifier} value={lang.idenftifier}>

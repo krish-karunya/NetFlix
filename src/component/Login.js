@@ -124,7 +124,7 @@ const Login = () => {
           <input
             type='text'
             placeholder='Name '
-            className='py-4 m-2 w-full rounded-lg p-8 text-left bg-slate-800'
+            className='text-white py-4 m-2 w-full rounded-lg p-8 text-left bg-slate-800'
             ref={name}
           />
         )}
@@ -132,13 +132,13 @@ const Login = () => {
         <input
           type='text'
           placeholder='Email Address or phone number '
-          className='py-4 m-2 w-full rounded-lg p-8 text-left bg-slate-800'
+          className='py-4 text-white m-2 w-full rounded-lg p-8 text-left bg-slate-800'
           ref={email}
         />
         <input
           type='password'
           placeholder='Password'
-          className='py-4  m-2 w-full rounded-lg p-8 text-left bg-slate-800'
+          className='py-4 text-white m-2 w-full rounded-lg p-8 text-left bg-slate-800'
           ref={password}
         />
         <p className='text-red-700 font-bold text-xl py-2'>{errorMessage}</p>

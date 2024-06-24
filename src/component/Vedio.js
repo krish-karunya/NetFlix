@@ -23,14 +23,14 @@ const Vedio = () => {
   };
 
   return (
-    <div>
+    <div className='w-screen'>
       <button
         className='absolute top-14 bg-blue-700 text-white text-sm align-middle rounded-md m-4 p-3 '
         onClick={handleClick}>
         ↩ BackButton
       </button>
       <iframe
-        className='w-full h-screen'
+        className=' h-svh  w-full'
         src={
           "https://www.youtube.com/embed/" + vedio?.key + "?&autoplay=1&mute=1"
         }

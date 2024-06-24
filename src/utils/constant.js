@@ -23,6 +23,6 @@ export const SUPPORTED_LANGUAGES = [
   { idenftifier: "hindi", name: "Hindi" },
 ];
 
-export const OPENAI_KEY =
-  "sk-proj-XSTyf8KtRWQOPAVR9WdCT3BlbkFJawfGuiYvN0SLZkcJ59OW";
-//  "sk-proj-CynkY4Qa2EeVTfHx8v7ST3BlbkFJfxiwUAPULpkzF43EjpZl";
+// export const OPENAI_KEY =
+//   "sk-proj-XSTyf8KtRWQOPAVR9WdCT3BlbkFJawfGuiYvN0SLZkcJ59OW";
+// //  "sk-proj-CynkY4Qa2EeVTfHx8v7ST3BlbkFJfxiwUAPULpkzF43EjpZl";

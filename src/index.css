@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-\ .vedio-bg {
+.vedio-bg {
   display: block;
   background: #000;
   border: none;

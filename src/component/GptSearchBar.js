@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import lang from "../utils/languageConstent";
 import { useDispatch, useSelector } from "react-redux";
-import openai from "../utils/openai";
+// import openai from "../utils/openai";
 import { API_Option } from "../utils/constant";
+import Run from "../config/gemini";
 import { addGptMovieResult } from "../utils/gptSlice";
 
 const GptSearchBar = () => {
@@ -26,22 +27,29 @@ const GptSearchBar = () => {
 
   const handleGptSearchClick = async () => {
     // console.log(SearchText.current.value);
+    if (!SearchText) {
+      <h1>Loading ...</h1>;
+    }
 
     const gptQuery =
       "Act as a movie recommendation system and suggest some indian movie for the query" +
       SearchText.current.value +
       "only give me a names of 5 movies , coma separated ,like the example given ahead ,Example Result:soorarai potturu,jersey,friends,dhoni";
-    const GptResult = await openai.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "gpt-3.5-turbo",
-    });
+    // const GptResult = await openai.chat.completions.create({
+    //   messages: [{ role: "user", content: gptQuery }],
+    //   model: "gpt-3.5-turbo",
+    // });
+    const GptResult = await Run(gptQuery);
     // if (!GptResult.choices) {
     //   return "Name is not founded ";
     // }
+    console.log(GptResult);
 
     // console.log(GptResult.choices[0]?.message?.content);
-
-    const GptMovies = GptResult.choices[0]?.message?.content.split(",");
+    if (!GptResult) {
+      <h1>Loading...</h1>;
+    }
+    const GptMovies = GptResult.split(",");
     // console.log(GptMovies);
 
     if (!GptMovies) {
@@ -76,7 +84,7 @@ const GptSearchBar = () => {
           ref={SearchText}
         />
         <button
-          className=' py-2 px-4 bg-red-700 text-white rounded-md w-[30%] m-4'
+          className=' py-2 px-4 bg-red-700 text-white rounded-md w-[30%] m-4 active:bg-red-800 hover:bg-red-500'
           onClick={handleGptSearchClick}>
           {lang[langKey].search}
         </button>
